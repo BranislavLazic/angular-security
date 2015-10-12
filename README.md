@@ -1,11 +1,14 @@
 # angular-security
 
-This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
-version 0.12.1.
-
 ## Build & development
 
-Run `grunt` for building and `grunt serve` for preview.
+In `angular-security` directory run `npm install`
+
+In `angular-security-rest` run `mvn clean install`
+
+In `angular-security-rest/target` directory run `java -jar angular-security-rest-0.0.1-SNAPSHOT.jar`
+
+In `angular-security` directory run `grunt` for building and `grunt serve` for preview.
 
 ## Testing
 
