@@ -9,7 +9,7 @@ angular.module('employeeManagerApp').factory('employeeService',['$http', 'API_BA
             return error;
         }),
         save: function (employee) {
-            $http.post(API_BASE + '/api/employee/save', {firstName: employee.firstName, lastName: employee.lastName, age: employee.age})
+            $http.post(API_BASE + '/api/employee/save', { firstName: employee.firstName, lastName: employee.lastName, age: employee.age })
             .success(function (data) {
                 return data;
             })
