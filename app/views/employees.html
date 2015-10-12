@@ -1,0 +1,51 @@
+<div ng-app="employeeManagerApp">
+    <div ng-controller="EmployeeController">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">New employee</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form ng-submit="saveEmployee()" role="form">
+                            <fieldset>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="First name" type="text" ng-model="employee.firstName">
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Last name" type="text" ng-model="employee.lastName">
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Age" type="text" ng-model="employee.age">
+                                </div>
+                            </fieldset>
+                            <input class="btn btn-lg btn-primary btn-block" type="submit" value="Save">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Employees</h3>
+                </div>
+                <div class="panel-body">
+                    <table class="table">
+                        <tr>
+                            <th>First name</th>
+                            <th>Last name</th>
+                            <th>Age</th>
+                        </tr>
+                        <tr ng-repeat="employee in employees">
+                            <td>{{employee.firstName}}</td>
+                            <td>{{employee.lastName}}</td>
+                            <td>{{employee.age}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
