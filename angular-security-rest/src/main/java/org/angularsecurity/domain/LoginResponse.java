@@ -1,4 +1,4 @@
-package org.blogapp.domain;
+package org.angularsecurity.domain;
 
 
 public class LoginResponse {

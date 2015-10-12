@@ -3,12 +3,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>org.blogapp</groupId>
-	<artifactId>blog-app-rest</artifactId>
+	<groupId>org.angularsecurity</groupId>
+	<artifactId>angular-security-rest</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>org.blogapp</name>
+	<name>org.angularsecurity</name>
 	<description></description>
 
 	<parent>

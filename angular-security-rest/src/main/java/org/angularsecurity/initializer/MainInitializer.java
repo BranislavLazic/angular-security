@@ -1,10 +1,10 @@
-package org.blogapp.initializer;
+package org.angularsecurity.initializer;
 
-import org.blogapp.domain.Employee;
-import org.blogapp.domain.Role;
-import org.blogapp.domain.User;
-import org.blogapp.service.EmployeeService;
-import org.blogapp.service.UserService;
+import org.angularsecurity.domain.Employee;
+import org.angularsecurity.domain.Role;
+import org.angularsecurity.domain.User;
+import org.angularsecurity.service.EmployeeService;
+import org.angularsecurity.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

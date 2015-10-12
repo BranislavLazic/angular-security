@@ -1,6 +1,6 @@
-package org.blogapp.repository;
+package org.angularsecurity.repository;
 
-import org.blogapp.domain.User;
+import org.angularsecurity.domain.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;

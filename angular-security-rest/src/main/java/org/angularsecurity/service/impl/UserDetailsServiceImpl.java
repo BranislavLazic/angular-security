@@ -1,8 +1,8 @@
-package org.blogapp.service.impl;
+package org.angularsecurity.service.impl;
 
-import org.blogapp.domain.User;
-import org.blogapp.repository.UserRepository;
-import org.blogapp.service.UserService;
+import org.angularsecurity.domain.User;
+import org.angularsecurity.repository.UserRepository;
+import org.angularsecurity.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

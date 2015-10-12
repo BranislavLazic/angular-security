@@ -1,9 +1,9 @@
-package org.blogapp.authentication;
+package org.angularsecurity.authentication;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-import org.blogapp.domain.User;
-import org.blogapp.service.UserService;
+import org.angularsecurity.domain.User;
+import org.angularsecurity.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;

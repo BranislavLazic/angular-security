@@ -1,6 +1,6 @@
-package org.blogapp.service;
+package org.angularsecurity.service;
 
-import org.blogapp.domain.User;
+import org.angularsecurity.domain.User;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
 public interface UserService extends UserDetailsService {

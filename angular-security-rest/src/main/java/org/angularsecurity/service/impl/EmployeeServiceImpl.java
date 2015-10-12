@@ -1,8 +1,8 @@
-package org.blogapp.service.impl;
+package org.angularsecurity.service.impl;
 
-import org.blogapp.domain.Employee;
-import org.blogapp.repository.PostRepository;
-import org.blogapp.service.EmployeeService;
+import org.angularsecurity.domain.Employee;
+import org.angularsecurity.repository.PostRepository;
+import org.angularsecurity.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,11 +1,9 @@
-package org.blogapp.controller;
+package org.angularsecurity.controller;
 
-import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
-import org.blogapp.authentication.TokenHandler;
-import org.blogapp.domain.LoginResponse;
-import org.blogapp.domain.User;
-import org.blogapp.service.UserService;
+import org.angularsecurity.authentication.TokenHandler;
+import org.angularsecurity.domain.LoginResponse;
+import org.angularsecurity.domain.User;
+import org.angularsecurity.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.security.core.userdetails.UserDetails;

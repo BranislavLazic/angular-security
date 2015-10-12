@@ -1,7 +1,7 @@
-package org.blogapp;
+package org.angularsecurity;
 
-import org.blogapp.filter.JwtFilter;
-import org.blogapp.service.UserService;
+import org.angularsecurity.filter.JwtFilter;
+import org.angularsecurity.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

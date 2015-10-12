@@ -1,4 +1,4 @@
-package org.blogapp.domain;
+package org.angularsecurity.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.EnumType;

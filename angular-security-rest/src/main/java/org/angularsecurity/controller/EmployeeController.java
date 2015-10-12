@@ -1,7 +1,7 @@
-package org.blogapp.controller;
+package org.angularsecurity.controller;
 
-import org.blogapp.domain.Employee;
-import org.blogapp.service.EmployeeService;
+import org.angularsecurity.domain.Employee;
+import org.angularsecurity.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.validation.BindingResult;
