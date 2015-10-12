@@ -5,3 +5,4 @@
 /bower_components
 /angular-security-rest/.idea
 /angular-security-rest/target
+npm-debug.log
