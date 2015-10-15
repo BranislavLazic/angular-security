@@ -2,10 +2,11 @@
 /dist
 /.tmp
 /.sass-cache
-/bower_components
+/app/bower_components
 /angular-security-rest/.idea
 /angular-security-rest/target
 npm-debug.log
 /angular-security-rest/.classpath
 /angular-security-rest/.project
 /angular-security-rest/.settings/
+/dist

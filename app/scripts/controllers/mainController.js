@@ -1,6 +1,10 @@
-'use strict';
+(function() {
+  
+  'use strict';
 
-angular.module('employeeManagerApp')
-  .controller('MainController', function () {
+  angular.module('employeeManagerApp')
+    .controller('MainController', function () {
 
-  });
+    });
+
+})();

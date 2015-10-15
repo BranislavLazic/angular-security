@@ -30,7 +30,7 @@ public class EmployeeController {
         return employeeService.findAll();
     }
 
-    @RequestMapping(value = "/api/employee/save", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/api/employee/save", method = RequestMethod.POST)
     public ResponseEntity<Employee> savePost(@RequestBody @Valid Employee employee, BindingResult result) {
         if(!result.hasErrors()) {
             employeeService.save(employee);

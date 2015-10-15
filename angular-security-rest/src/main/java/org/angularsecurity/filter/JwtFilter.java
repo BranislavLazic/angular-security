@@ -34,10 +34,11 @@ public class JwtFilter implements Filter {
         response.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
 
         HttpServletRequest request = (HttpServletRequest) req;
-
         if(!request.getMethod().equals("OPTIONS")) {
             String authHeader = request.getHeader("Authorization");
+            // Dummy check! Implement real user token checking.
             if (authHeader == null || !authHeader.startsWith("Bearer ")) {
+
                 throw new ServletException("Missing or invalid Authorization header.");
             }
 
