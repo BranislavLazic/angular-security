@@ -1,5 +1,8 @@
 # angular-security
 
+Demo application that shows how to implement token based authentication and
+authorization.
+
 ## Build & development
 
 In `angular-security` directory run `npm install`
