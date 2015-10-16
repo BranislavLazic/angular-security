@@ -10,7 +10,16 @@
         });
 
         $scope.saveEmployee = function () {
-            employeeService.save($scope.employee);
+            employeeService.save($scope.employee)
+                .then(function(response) {
+                    if(response.status === 200) {
+                        $scope.employees.push(response.config.data);
+                    }
+                    
+                }, function(response) {
+                    // Handle error
+                    console.log(response);
+            });
             initEmployee();
         };
 

@@ -8,7 +8,7 @@
             findAll: $http.get(API_BASE + '/admin/employee/all'),
             
             save: function (employee) {
-                    $http.post(API_BASE + '/admin/employee/save', { firstName: employee.firstName, lastName: employee.lastName, age: employee.age });
+                    return $http.post(API_BASE + '/admin/employee/save', { firstName: employee.firstName, lastName: employee.lastName, age: employee.age });
             }
         };
     }]);
