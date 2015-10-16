@@ -33,7 +33,7 @@
         .when('/logout', {
             template: ' ',
             controller: ['$scope','$location', 'store', '$rootScope', function ($scope, $location, store, $rootScope) {
-                store.remove('jwt');
+                store.remove('jwt_token');
                 $rootScope.loggedIn = false;
                 $location.path('/login');
             }]
@@ -46,8 +46,8 @@
 
     }).service('AuthenticationHttpInterceptor', ['store','$rootScope', function(store, $rootScope) {
         this.request = function(config) {
-            if(store.get('jwt')) {
-                config.headers.Authorization = 'Bearer ' + store.get('jwt');
+            if(store.get('jwt_token')) {
+                config.headers.Authorization = store.get('jwt_token');
                 $rootScope.loggedIn = true;
             }
             return config;
@@ -56,7 +56,7 @@
         $rootScope.$on('$locationChangeStart', function (e, next, current) {
             var nextPath = $location.path();
             var nextRoute = $route.routes[nextPath];
-            if(nextRoute && nextRoute.auth && !store.get('jwt')) {
+            if(nextRoute && nextRoute.auth && !store.get('jwt_token')) {
                 e.preventDefault();
                 $location.path('/login');
             }

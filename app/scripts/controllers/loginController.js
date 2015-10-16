@@ -9,10 +9,10 @@
             };
 
             $scope.login = function () {
-                loginService.login($scope.user.username, $scope.user.password).then(function(token) {
-                    $scope.token = token;
+                loginService.login($scope.user.username, $scope.user.password).success(function (result, status, headers, config) {
+                    $scope.token = headers('Authorization');
                     // Saves token to local storage and redirects to "employees" page
-                    store.set('jwt', token);
+                    store.set('jwt_token', headers('Authorization'));
                     $location.path('/employees');
                 });
             };

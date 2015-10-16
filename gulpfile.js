@@ -27,7 +27,7 @@ gulp.task('minify-css', function() {
 
 gulp.task('minify-js', function() {
 	gulp.src(['app/**/*.js', '!app/bower_components/**'])
-    .pipe(uglify({mangle: false}))
+//    .pipe(uglify({mangle: false}))
     .pipe(concat('app.js'))
 		.pipe(gulp.dest('dist/'));
     
