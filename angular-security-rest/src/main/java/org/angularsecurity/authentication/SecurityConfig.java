@@ -20,7 +20,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableWebSecurity
 @Configuration
 @Order(1)
-public class StatelessAuthenticationSecurityConfig extends WebSecurityConfigurerAdapter {
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
 	private UserDetailsService userDetailsService;
@@ -28,7 +28,7 @@ public class StatelessAuthenticationSecurityConfig extends WebSecurityConfigurer
 	@Autowired
 	private TokenAuthenticationService tokenAuthenticationService;
 
-	public StatelessAuthenticationSecurityConfig() {
+	public SecurityConfig() {
 		super(true);
 	}
 
