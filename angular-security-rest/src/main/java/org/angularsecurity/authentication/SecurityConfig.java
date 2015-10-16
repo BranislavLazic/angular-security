@@ -54,7 +54,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 				.antMatchers(HttpMethod.GET, "/api/**").permitAll()
 				
 				//defined Admin only API area
-				.antMatchers("/admin/**").hasRole("ADMIN")
+				.antMatchers("/api/admin/**").hasRole("ADMIN")
 				
 				//all other request need to be authenticated
 				.anyRequest().hasRole("USER").and()				

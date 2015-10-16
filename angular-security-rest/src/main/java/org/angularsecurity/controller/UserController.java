@@ -39,39 +39,39 @@ public class UserController {
 		final User currentUser = userRepository.findByUsername(authentication.getName());
 
 		if (user.getNewPassword() == null || user.getNewPassword().length() < 4) {
-			return new ResponseEntity<String>("new password to short", HttpStatus.UNPROCESSABLE_ENTITY);
+			return new ResponseEntity<>("new password to short", HttpStatus.UNPROCESSABLE_ENTITY);
 		}
 
 		final BCryptPasswordEncoder pwEncoder = new BCryptPasswordEncoder();
 		if (!pwEncoder.matches(user.getPassword(), currentUser.getPassword())) {
-			return new ResponseEntity<String>("old password mismatch", HttpStatus.UNPROCESSABLE_ENTITY);
+			return new ResponseEntity<>("old password mismatch", HttpStatus.UNPROCESSABLE_ENTITY);
 		}
 
 		currentUser.setPassword(pwEncoder.encode(user.getNewPassword()));
 		userRepository.saveAndFlush(currentUser);
-		return new ResponseEntity<String>("password changed", HttpStatus.OK);
+		return new ResponseEntity<>("password changed", HttpStatus.OK);
 	}
 
 	@RequestMapping(value = "/admin/api/users/{user}/grant/role/{role}", method = RequestMethod.POST)
 	public ResponseEntity<String> grantRole(@PathVariable User user, @PathVariable UserRole role) {
 		if (user == null) {
-			return new ResponseEntity<String>("invalid user id", HttpStatus.UNPROCESSABLE_ENTITY);
+			return new ResponseEntity<>("invalid user id", HttpStatus.UNPROCESSABLE_ENTITY);
 		}
 
 		user.grantRole(role);
 		userRepository.saveAndFlush(user);
-		return new ResponseEntity<String>("role granted", HttpStatus.OK);
+		return new ResponseEntity<>("role granted", HttpStatus.OK);
 	}
 
 	@RequestMapping(value = "/admin/api/users/{user}/revoke/role/{role}", method = RequestMethod.POST)
 	public ResponseEntity<String> revokeRole(@PathVariable User user, @PathVariable UserRole role) {
 		if (user == null) {
-			return new ResponseEntity<String>("invalid user id", HttpStatus.UNPROCESSABLE_ENTITY);
+			return new ResponseEntity<>("invalid user id", HttpStatus.UNPROCESSABLE_ENTITY);
 		}
 
 		user.revokeRole(role);
 		userRepository.saveAndFlush(user);
-		return new ResponseEntity<String>("role revoked", HttpStatus.OK);
+		return new ResponseEntity<>("role revoked", HttpStatus.OK);
 	}
 
 	@RequestMapping(value = "/admin/api/users", method = RequestMethod.GET)
