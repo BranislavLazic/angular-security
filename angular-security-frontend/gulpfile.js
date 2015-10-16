@@ -6,6 +6,7 @@ var minifyCSS = require('gulp-minify-css');
 var clean = require('gulp-clean');
 var jshint = require('gulp-jshint');
 var concat = require('gulp-concat');
+var watch = require('gulp-watch');
 
 
 gulp.task('connect', function () {
@@ -22,7 +23,7 @@ gulp.task('clean', function() {
 gulp.task('minify-css', function() {
   gulp.src(['app/**/*.css', '!app/bower_components/**'])
     .pipe(minifyCSS({ comments:true, spare:true }))
-    .pipe(gulp.dest('dist/'))
+    .pipe(gulp.dest('dist/'));
 });
 
 gulp.task('minify-js', function() {
@@ -50,6 +51,12 @@ gulp.task('lint', function() {
     .pipe(jshint.reporter('fail'));
 });
 
-gulp.task('build', ['lint', 'minify-js', 'minify-css', 'copy-html-files', 'copy-bower-components', 'connect']);
+gulp.task('watch', function() {
+  gulp.watch('app/**/*.html', ['copy-html-files']);
+  gulp.watch('app/**/*.js', ['minify-js']);
+  gulp.watch('app/**/*.css', ['minify-css']);
+});
 
-gulp.task('default', ['build']);
+gulp.task('build', ['lint', 'minify-js', 'minify-css', 'copy-html-files', 'copy-bower-components']);
+
+gulp.task('default', ['build', 'connect', 'watch']);

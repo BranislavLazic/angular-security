@@ -3,8 +3,8 @@
   'use strict';
 
   angular.module('employeeManagerApp')
-    .controller('MainController', function () {
-
-    });
+    .controller('MainController',['$scope', function ($scope) {
+      $scope.title = 'Welcome to employee manager!';
+    }]);
 
 })();
