@@ -25,12 +25,12 @@ public class EmployeeController {
 		this.employeeService = employeeService;
 	}
 
-	@RequestMapping(value = "/api/admin/employee/all", method = RequestMethod.GET)
+	@RequestMapping(value = "/admin/employee/all", method = RequestMethod.GET)
 	public List<Employee> getAllPosts() {
 		return employeeService.findAll();
 	}
 
-	@RequestMapping(value = "/api/admin/employee/save", method = RequestMethod.POST)
+	@RequestMapping(value = "/admin/employee/save", method = RequestMethod.POST)
 	public ResponseEntity<Employee> savePost(@RequestBody @Valid Employee employee, BindingResult result) {
 		if (!result.hasErrors()) {
 			employeeService.save(employee);
