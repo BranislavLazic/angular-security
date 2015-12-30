@@ -46,7 +46,9 @@
 
     }).service('AuthenticationHttpInterceptor', ['store','$rootScope', function(store, $rootScope) {
         this.request = function(config) {
-            if(store.get('jwt_token')) {
+
+	    if(store.get('jwt_token')) {
+
                 config.headers.Authorization = store.get('jwt_token');
                 $rootScope.loggedIn = true;
             }
