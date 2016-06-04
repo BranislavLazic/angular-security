@@ -2,9 +2,6 @@
   "name": "angularsecurity",
   "private": true,
   "devDependencies": {
-    "jshint-stylish": "^1.0.0",
-    "karma-jasmine": "*",
-    "karma-phantomjs-launcher": "*",
     "gulp": "^3.9.0",
     "gulp-clean": "^0.3.1",
     "gulp-connect": "^2.2.0",
@@ -13,11 +10,5 @@
     "gulp-uglify": "^1.4.2",
     "gulp-concat": "latest",
     "gulp-watch": "latest"
-  },
-  "engines": {
-    "node": ">=0.10.0"
-  },
-  "scripts": {
-    "test": "grunt test"
   }
 }

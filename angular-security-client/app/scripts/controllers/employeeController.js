@@ -1,11 +1,11 @@
 (function() {
 
     'use strict';
-    
+
     angular.module('employeeManagerApp').controller('EmployeeController', ['$scope','employeeService', function ($scope, employeeService) {
         initEmployee();
 
-        employeeService.findAll.success(function (data) {
+        employeeService.findAll(function (data) {
             $scope.employees = data;
         });
 
@@ -13,9 +13,10 @@
             employeeService.save($scope.employee)
                 .then(function(response) {
                     if(response.status === 200) {
-                        $scope.employees.push(response.config.data);
+                      employeeService.findAll(function (data) {
+                          $scope.employees = data;
+                      });
                     }
-                    
                 }, function(response) {
                     // Handle error
                     console.log(response);
@@ -30,9 +31,5 @@
                 age: null
             };
         }
-
     }]);
-    
 })();
-
-

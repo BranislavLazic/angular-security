@@ -1,18 +1,14 @@
 (function() {
-    
+
     'use strict';
 
     angular
     .module('employeeManagerApp', [
-        'ngAnimate',
         'ngCookies',
         'ngResource',
         'ngRoute',
-        'ngSanitize',
-        'ngTouch',
         'angular-storage',
-        'angular-jwt',
-        'ui.router'
+        'angular-jwt'
     ])
     .config(function ($routeProvider, $httpProvider) {
         $routeProvider
