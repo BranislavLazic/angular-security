@@ -28,11 +28,16 @@
         })
         .when('/logout', {
             template: ' ',
-            controller: ['$scope','$location', 'store', '$rootScope', function ($scope, $location, store, $rootScope) {
-                store.remove('jwt_token');
-                $rootScope.loggedIn = false;
-                $location.path('/login');
-            }]
+            controller: ['$scope', 'API_BASE', '$http', '$location', 'store', '$rootScope',
+              function ($scope, API_BASE, $http, $location, store, $rootScope) {
+                  // Remove token from local storage
+                  store.remove('access_token');
+                  // Invalidate token on backend side
+                  $http.get(API_BASE + '/oauth/revoke-token');
+                  $rootScope.loggedIn = false;
+                  $location.path('/login');
+              }
+            ]
         })
         .otherwise({
             redirectTo: '/'
@@ -43,9 +48,8 @@
     }).service('AuthenticationHttpInterceptor', ['store','$rootScope', function(store, $rootScope) {
         this.request = function(config) {
 
-	    if(store.get('jwt_token')) {
-
-                config.headers.Authorization = store.get('jwt_token');
+	    if(store.get('access_token')) {
+                config.headers.Authorization = 'Bearer ' + store.get('access_token');
                 $rootScope.loggedIn = true;
             }
             return config;
@@ -54,7 +58,7 @@
         $rootScope.$on('$locationChangeStart', function (e, next, current) {
             var nextPath = $location.path();
             var nextRoute = $route.routes[nextPath];
-            if(nextRoute && nextRoute.auth && !store.get('jwt_token')) {
+            if(nextRoute && nextRoute.auth && !store.get('access_token')) {
                 e.preventDefault();
                 $location.path('/login');
             }

@@ -4,9 +4,9 @@
 /angular-security-client/.sass-cache
 /angular-security-client/app/bower_components
 /angular-security-client/npm-debug.log
-/angular-security-rest/.idea
-/angular-security-rest/target
-/angular-security-rest/.classpath
-/angular-security-rest/.project
-/angular-security-rest/.settings/
-angular-security-rest/angular-security-rest.iml
+/angular-security-rest-oauth/.idea
+/angular-security-rest-oauth/target
+/angular-security-rest-oauth/.classpath
+/angular-security-rest-oauth/.project
+/angular-security-rest-oauth/.settings/
+angular-security-rest-oauth/angular-security-rest.iml

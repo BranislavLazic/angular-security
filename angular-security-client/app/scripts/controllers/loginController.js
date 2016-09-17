@@ -10,13 +10,12 @@
 
             $scope.login = function () {
                 loginService.login($scope.user.username, $scope.user.password).success(function (result, status, headers, config) {
-                    $scope.token = headers('Authorization');
                     // Saves token to local storage and redirects to "employees" page
-                    store.set('jwt_token', headers('Authorization'));
+                    store.set('access_token', result.access_token);
                     $location.path('/employees');
                 });
             };
 
     } ]);
-    
+
 })();
