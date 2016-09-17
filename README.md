@@ -1,9 +1,12 @@
 # angular-security
 
-Demo application that shows how to implement token based authentication and
+Demo application that shows how to implement OAuth2 token based authentication and
 authorization in AngularJS application with Java REST API sample application.
 
 ## Build & development
+
+Make sure you have MySQL server installed and database called "employee_db".
+You can edit database settings in angular-security-rest-oauth/src/main/resources/application.properties file.
 
 In `angular-security-client` directory run `npm install`
 
